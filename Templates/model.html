@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/index_style.css">
+</head>
+
+<body>
+    <nav class="nav navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/model">Honey Product Modeling</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/imgrecognition">Image Recognition</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Visualizations
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/viz1">Viz1</a>
+                        <a class="dropdown-item" href="/viz2">Viz2</a>
+                        <a class="dropdown-item" href="/viz3">Viz3</a>
+                        <a class="dropdown-item" href="/viz4">Viz4</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/documentation">Documentation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/references">References</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <style>
+        form {
+            margin: auto;
+            width: 35%;
+        }
+    
+        .result {
+            margin: auto;
+            width: 35%;
+            border: 1px solid #ccc;
+        }
+    </style>
+
+<head>
+    <title>Bike Usage Model</title>
+</head>
+<form action="{{ url_for('main') }}" method="POST">
+    <fieldset>
+        <legend>Input values:</legend>
+        nCLOTHIANIDIN:
+        <input name="nCLOTHIANIDIN" type="number" required>
+        <br>
+        nIMIDACLOPRID:
+        <input name="nIMIDACLOPRID" type="number" required>
+        <br>
+        nTHIAMETHOXAM:
+        <input name="nTHIAMETHOXAM" type="number" required>
+        <br>
+        nACETAMIPRID:
+        <input name="nACETAMIPRID" type="number" required>
+        <br>
+        nTHIACLOPRID:
+        <input name="nTHIACLOPRID" type="number" required>
+        <br>
+        nAllNeonic:
+        <input name="nAllNeonic" type="number" required>
+        <br>
+        numcol:
+        <input name="numcol" type="number" required>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+<br>
+<div class="result" align="center">
+    <p> LRE Prediction: {{  prediction  }} </p>
+    <p>Scaled LRE Prediction {{  scaled_prediction  }}</p>
+    <p>Kaggle Prediction {{  kaggle_y  }}</p>
+
+</div>
+
+    <div class="container-fluid">
+        <section class="row">
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-8 col-lg-8 col-md-6">
+                    <article class="description-content">
+
+                        <h1>Title</h1>
+                        <h5>Summary</h5>
+                        <hr class="my-4">
+                        <img class="landing"
+                            src=""
+                            class="float-left" alt="Main part of page goes here" style="width:100%">
+                        <div class="caption">
+                            <p class="capt"> Summary</p>
+                        </div>
+                        <p>
+                            HONEY BEE SUMMARY TEMP
+                        </p>
+                        <h5>Resources:</h5>
+                        <ol>
+                            <li> <a href=""></a>
+                            </li>
+                            <li><a href=""></a></li>
+                        </ol>
+                        <hr>
+                        <h10>UNCC Data Boot Camp 2020</h10>
+                    </article>
+                </div>
+                <div class="col-12 col-xl-2 col-lg-2 col-md-2 col-sm-6">
+                    <div class="image-navigation">
+                        <!-- Include Tab here imgs-->
+                        <h4>Visualizations</h4>
+                        <hr class="my-4">
+                        <div class="thumbnail">
+                            <a href="/viz1">
+                                <img src="" class="float-center" alt="Responsive image"
+                                    style="width: 100%">
+                                <div class="caption" class="align">
+                                    <p class="capt">Img1</p>
+                                </div>
+                        </div>
+                        <div class="thumbnail">
+                            <a href="/viz2">
+                                <img src="" class="float-center" alt="Responsive image"
+                                    style="width:100%">
+                                <div class="caption">
+                                    <p class="capt">Img2</p>
+                                </div>
+                        </div>
+                        <div class="thumbnail">
+                            <a href="viz3">
+                                <img src=""
+                                    class='justify-content-center' alt="Responsive image" style="width:100%">
+                                <div class="caption">
+                                    <p class="capt">Img3</p>
+                                </div>
+                        </div>
+                        <div class="thumbnail">
+                            <a href="viz4">
+                                <img src=""
+                                    class='justify-content-center' alt="seasonal_teaser" style="width:100%">
+                                <div class="caption">
+                                    <p class="capt">Img4</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+
+<!-- <!doctype html>
+<html>
+<style>
+    form {
+        margin: auto;
+        width: 35%;
+    }
+
+    .result {
+        margin: auto;
+        width: 35%;
+        border: 1px solid #ccc;
+    }
+</style>
+
+<head>
+    <title>Bike Usage Model</title>
+</head>
+<form action="{{ url_for('main') }}" method="POST">
+    <fieldset>
+        <legend>Input values:</legend>
+        nCLOTHIANIDIN:
+        <input name="nCLOTHIANIDIN" type="number" required>
+        <br>
+        nIMIDACLOPRID:
+        <input name="nIMIDACLOPRID" type="number" required>
+        <br>
+        nTHIAMETHOXAM:
+        <input name="nTHIAMETHOXAM" type="number" required>
+        <br>
+        nACETAMIPRID:
+        <input name="nACETAMIPRID" type="number" required>
+        <br>
+        nTHIACLOPRID:
+        <input name="nTHIACLOPRID" type="number" required>
+        <br>
+        nAllNeonic:
+        <input name="nAllNeonic" type="number" required>
+        <br>
+        numcol:
+        <input name="numcol" type="number" required>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+<br>
+<div class="result" align="center">
+    <p> LRE Prediction: {{  prediction  }} </p>
+    <p>Scaled LRE Prediction {{  scaled_prediction  }}</p>
+    <p>Kaggle Prediction {{  kaggle_y  }}</p>
+
+</div> -->
+<!-- </html> -->
