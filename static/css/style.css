@@ -1,0 +1,37 @@
+/* html,
+body, */
+#mapid {
+  position: relative;
+  /* border: 1px solid black; */
+  border-radius: 8px;
+  height: 600px;  /* or as desired */
+  width: 100%;  /* This means "100% of the width of its container", the .col-md-8 */
+}
+
+.legend {
+  padding: 10px;
+  font-family: Sanchez, serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 18px;
+  color: #555;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.legend .orca {
+  color: orange;
+}
+
+.legend .porpoise {
+  color: blue;
+}
+
+.legend .grayWhale {
+  color: darkred;
+}
+
+.legend .humpback {
+  color: green;
+}
