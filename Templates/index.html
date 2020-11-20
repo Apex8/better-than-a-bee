@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/index_style.css">
+</head>
+
+<body>
+    <nav class="nav navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="orca_quick_facts.html">Honey Product Modeling</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Visualizations
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="pods.html">Orca Pod Comparisons</a>
+                        <a class="dropdown-item" href="locations.html">Sightings Locations</a>
+                        <a class="dropdown-item" href="active.html">Most Active Locations</a>
+                        <a class="dropdown-item" href="seasonal.html">Seasonal Observations</a>
+
+
+                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="method.html">Image Recognition</a>
+                </li>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/api/v1.0/mammal_sightings">References</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="method.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid">
+        <section class="row">
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-8 col-lg-8 col-md-6">
+                    <article class="description-content">
+
+                        <h1>Honey Bee Project</h1>
+                        <h5>Brian, Graham, Yukie ,Jess, and Katy</h5>
+                        <hr class="my-4">
+                        <img class="landing"
+                            src="https://static.wixstatic.com/media/760f65_aa13d9fb8bcb4481a1da66473486716d~mv2.jpg/v1/fill/w_1000,h_520,al_c,q_90/760f65_aa13d9fb8bcb4481a1da66473486716d~mv2.webp"
+                            class="float-left" alt="K43" style="width:100%">
+                        <div class="caption">
+                            <p class="capt">K43. Source: Center for Whale Research</p>
+                        </div>
+                        <p>
+                            For Project 2, we took a dive into marine mammal sighting data hosted from <a
+                                href="https://whalemuseum.org/"> The Whale Museum. </a>
+                            First we scraped the API data into PostgreSQL, used flask to render our own restful API,
+                            then performed analysis and visualizations based on the data. We specifically looked at the
+                            sightings' locations, sightings within orca pods, and seasonal factors in sightings. The
+                            majority of this project focuses on orcas because they accounted for all but 4 sightings
+                            within our dataset. This
+                            website
+                            serves as a compilation of all of our work, and we hope you enjoy.
+                        </p>
+                        <h5>Resources:</h5>
+                        <ol>
+                            <li>The Whale Museum <a href="http://hotline.whalemuseum.org/api.json?limit=10000">API</a>
+                            </li>
+                            <li><a href="https://www.whaleresearch.com/"> Center for Whale Research</a></li>
+                        </ol>
+                        <hr>
+                        <h10>October 2020</h10>
+                    </article>
+                </div>
+                <div class="col-12 col-xl-2 col-lg-2 col-md-2 col-sm-6">
+                    <div class="image-navigation">
+                        <h4>Visualizations</h4>
+                        <hr class="my-4">
+                        <div class="thumbnail">
+                            <a href="pods.html">
+                                <img src="../static/img/piechart.png" class="float-center" alt="Responsive image"
+                                    style="width: 100%">
+                                <div class="caption" class="align">
+                                    <p class="capt">Orca Pods</p>
+                                </div>
+                        </div>
+                        <div class="thumbnail">
+                            <a href="locations.html">
+                                <img src="../static/img/map_image.png" class="float-center" alt="Responsive image"
+                                    style="width:100%">
+                                <div class="caption">
+                                    <p class="capt">Sightings Locations</p>
+                                </div>
+                        </div>
+                        <div class="thumbnail">
+                            <a href="active.html">
+                                <img src="https://static.wixstatic.com/media/760f65_e2ae8c6935a041ffb3f705f774dde759~mv2.jpg/v1/fill/w_999,h_666,al_c,q_90/760f65_e2ae8c6935a041ffb3f705f774dde759~mv2.webp"
+                                    class='justify-content-center' alt="Responsive image" style="width:100%">
+                                <div class="caption">
+                                    <p class="capt">Most Active Locations</p>
+                                </div>
+                        </div>
+                        <div class="thumbnail">
+                            <a href="seasonal.html">
+                                <img src="../static/img/seasonal.png"
+                                    class='justify-content-center' alt="seasonal_teaser" style="width:100%">
+                                <div class="caption">
+                                    <p class="capt">Seasonal Observations</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
