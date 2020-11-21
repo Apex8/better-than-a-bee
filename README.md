@@ -1,6 +1,8 @@
 # Better than a “B”ee project
 
 ## Project #3 members: Yukie Kajita, Katy Luquire, Jessica Yoder, Graham Endean, Brian Stronger, John Falcone
+
+![Bees](static/img/Bees-for-Test.png)
  
 Beginning in 2006 with the first reported case of Colony Collapse Disorder (CCD), honeybee hives across the world (and for this project the USA) have been disappearing at an alarming rate. With no end in sight to the loss of our favorite pollinators, cause apparently nobody learned anything from the Bee movie, once again data must come to the rescue! We have devised two machine learning tasks to aid our fellow bee enthusiasts and researchers in understanding CCD as well as some trends to point to so it can be prevented in the future.
 
