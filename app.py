@@ -61,6 +61,14 @@ def viz3():
 def viz4():
     return render_template('viz4.html')
 
+@app.route('/viz5')
+def viz4():
+    return render_template('viz5.html')
+
+@app.route('/viz6')
+def viz4():
+    return render_template('viz6.html')
+
 @app.route('/model', methods=['GET', 'POST'])
 def main():
     if flask.request.method == 'POST':
