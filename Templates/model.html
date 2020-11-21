@@ -3,10 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Landing Page</title>
+    <title>Honey Production Model</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/css/index_style.css">
+    <link rel="stylesheet" href="../static/css/contact_style.css">
+    <!-- Glyphicons Fontawesome link -->
+    <script src="https://kit.fontawesome.com/f11d2abb65.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -38,10 +40,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/documentation">Documentation</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/references">References</a>
+                    <a class="nav-link" href="/documentation">Documentation & References</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Contact</a>
@@ -54,7 +53,7 @@
             margin: auto;
             width: 35%;
         }
-    
+
         .result {
             margin: auto;
             width: 35%;
@@ -62,43 +61,43 @@
         }
     </style>
 
-<head>
-    <title>Bike Usage Model</title>
-</head>
-<form action="{{ url_for('main') }}" method="POST">
-    <fieldset>
-        <legend>Input values:</legend>
-        nCLOTHIANIDIN:
-        <input name="nCLOTHIANIDIN" type="number" required>
-        <br>
-        nIMIDACLOPRID:
-        <input name="nIMIDACLOPRID" type="number" required>
-        <br>
-        nTHIAMETHOXAM:
-        <input name="nTHIAMETHOXAM" type="number" required>
-        <br>
-        nACETAMIPRID:
-        <input name="nACETAMIPRID" type="number" required>
-        <br>
-        nTHIACLOPRID:
-        <input name="nTHIACLOPRID" type="number" required>
-        <br>
-        nAllNeonic:
-        <input name="nAllNeonic" type="number" required>
-        <br>
-        numcol:
-        <input name="numcol" type="number" required>
-        <br>
-        <input type="submit">
-    </fieldset>
-</form>
-<br>
-<div class="result" align="center">
-    <p> LRE Prediction: {{  prediction  }} </p>
-    <p>Scaled LRE Prediction {{  scaled_prediction  }}</p>
-    <p>Kaggle Prediction {{  kaggle_y  }}</p>
+    <head>
+        <title>Bike Usage Model</title>
+    </head>
+    <form action="{{ url_for('main') }}" method="POST">
+        <fieldset>
+            <legend>Input values:</legend>
+            nCLOTHIANIDIN:
+            <input name="nCLOTHIANIDIN" type="number" required>
+            <br>
+            nIMIDACLOPRID:
+            <input name="nIMIDACLOPRID" type="number" required>
+            <br>
+            nTHIAMETHOXAM:
+            <input name="nTHIAMETHOXAM" type="number" required>
+            <br>
+            nACETAMIPRID:
+            <input name="nACETAMIPRID" type="number" required>
+            <br>
+            nTHIACLOPRID:
+            <input name="nTHIACLOPRID" type="number" required>
+            <br>
+            nAllNeonic:
+            <input name="nAllNeonic" type="number" required>
+            <br>
+            numcol:
+            <input name="numcol" type="number" required>
+            <br>
+            <input type="submit">
+        </fieldset>
+    </form>
+    <br>
+    <div class="result" align="center">
+        <p> LRE Prediction: {{  prediction  }} </p>
+        <p>Scaled LRE Prediction {{  scaled_prediction  }}</p>
+        <p>Kaggle Prediction {{  kaggle_y  }}</p>
 
-</div>
+    </div>
 
     <div class="container-fluid">
         <section class="row">
@@ -109,9 +108,8 @@
                         <h1>Title</h1>
                         <h5>Summary</h5>
                         <hr class="my-4">
-                        <img class="landing"
-                            src=""
-                            class="float-left" alt="Main part of page goes here" style="width:100%">
+                        <img class="landing" src="" class="float-left" alt="Main part of page goes here"
+                            style="width:100%">
                         <div class="caption">
                             <p class="capt"> Summary</p>
                         </div>
@@ -135,32 +133,28 @@
                         <hr class="my-4">
                         <div class="thumbnail">
                             <a href="/viz1">
-                                <img src="" class="float-center" alt="Responsive image"
-                                    style="width: 100%">
+                                <img src="" class="float-center" alt="Responsive image" style="width: 100%">
                                 <div class="caption" class="align">
                                     <p class="capt">Img1</p>
                                 </div>
                         </div>
                         <div class="thumbnail">
                             <a href="/viz2">
-                                <img src="" class="float-center" alt="Responsive image"
-                                    style="width:100%">
+                                <img src="" class="float-center" alt="Responsive image" style="width:100%">
                                 <div class="caption">
                                     <p class="capt">Img2</p>
                                 </div>
                         </div>
                         <div class="thumbnail">
                             <a href="viz3">
-                                <img src=""
-                                    class='justify-content-center' alt="Responsive image" style="width:100%">
+                                <img src="" class='justify-content-center' alt="Responsive image" style="width:100%">
                                 <div class="caption">
                                     <p class="capt">Img3</p>
                                 </div>
                         </div>
                         <div class="thumbnail">
                             <a href="viz4">
-                                <img src=""
-                                    class='justify-content-center' alt="seasonal_teaser" style="width:100%">
+                                <img src="" class='justify-content-center' alt="seasonal_teaser" style="width:100%">
                                 <div class="caption">
                                     <p class="capt">Img4</p>
                                 </div>
