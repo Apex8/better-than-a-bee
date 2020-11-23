@@ -3,15 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Landing Page</title>
+    <title>Honey Production Model</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/css/index_style.css">
+    <link rel="stylesheet" href="../static/css/contact_style.css">
+    <!-- Glyphicons Fontawesome link -->
+    <script src="https://kit.fontawesome.com/f11d2abb65.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <nav class="nav navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">Home</a>
+        <a class="navbar-brand" style="background:rgb(206, 112, 25)" href="/">Home <i class="fas fa-home"></i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,17 +33,16 @@
                         Visualizations
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/viz1">Viz1</a>
-                        <a class="dropdown-item" href="/viz2">Viz2</a>
-                        <a class="dropdown-item" href="/viz3">Viz3</a>
-                        <a class="dropdown-item" href="/viz4">Viz4</a>
+                        <a class="dropdown-item" href="/viz1">Total Product/Price Per State</a>
+                        <a class="dropdown-item" href="/viz2">Production/Pesticide</a>
+                        <a class="dropdown-item" href="/viz3">Graphs Dash</a>
+                        <a class="dropdown-item" href="/viz4">Maps Dash</a>
+                        <a class="dropdown-item" href="/viz5">Colonies Added & Lost</a>
+                        <a class="dropdown-item" href="/viz6">Disease and Pesticides</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/documentation">Documentation</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/references">References</a>
+                    <a class="nav-link" href="/documentation">Documentation & References</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Contact</a>
@@ -54,7 +55,7 @@
             margin: auto;
             width: 35%;
         }
-    
+
         .result {
             margin: auto;
             width: 35%;
@@ -62,115 +63,43 @@
         }
     </style>
 
-<head>
-    <title>Bike Usage Model</title>
-</head>
-<form action="{{ url_for('main') }}" method="POST">
-    <fieldset>
-        <legend>Input values:</legend>
-        nCLOTHIANIDIN:
-        <input name="nCLOTHIANIDIN" type="number" required>
-        <br>
-        nIMIDACLOPRID:
-        <input name="nIMIDACLOPRID" type="number" required>
-        <br>
-        nTHIAMETHOXAM:
-        <input name="nTHIAMETHOXAM" type="number" required>
-        <br>
-        nACETAMIPRID:
-        <input name="nACETAMIPRID" type="number" required>
-        <br>
-        nTHIACLOPRID:
-        <input name="nTHIACLOPRID" type="number" required>
-        <br>
-        nAllNeonic:
-        <input name="nAllNeonic" type="number" required>
-        <br>
-        numcol:
-        <input name="numcol" type="number" required>
-        <br>
-        <input type="submit">
-    </fieldset>
-</form>
-<br>
-<div class="result" align="center">
-    <p> LRE Prediction: {{  prediction  }} </p>
-    <p>Scaled LRE Prediction {{  scaled_prediction  }}</p>
-    <p>Kaggle Prediction {{  kaggle_y  }}</p>
+    <head>
+        <title>Bike Usage Model</title>
+    </head>
+    <form action="{{ url_for('main') }}" method="POST">
+        <fieldset>
+            <legend>Input values:</legend>
+            nCLOTHIANIDIN:
+            <input name="nCLOTHIANIDIN" type="number" required>
+            <br>
+            nIMIDACLOPRID:
+            <input name="nIMIDACLOPRID" type="number" required>
+            <br>
+            nTHIAMETHOXAM:
+            <input name="nTHIAMETHOXAM" type="number" required>
+            <br>
+            nACETAMIPRID:
+            <input name="nACETAMIPRID" type="number" required>
+            <br>
+            nTHIACLOPRID:
+            <input name="nTHIACLOPRID" type="number" required>
+            <br>
+            nAllNeonic:
+            <input name="nAllNeonic" type="number" required>
+            <br>
+            numcol:
+            <input name="numcol" type="number" required>
+            <br>
+            <input type="submit">
+        </fieldset>
+    </form>
+    <br>
+    <div class="result" align="center">
+        <p> LRE Prediction: {{  prediction  }} </p>
+        <p>Scaled LRE Prediction {{  scaled_prediction  }}</p>
+        <p>Kaggle Prediction {{  kaggle_y  }}</p>
 
-</div>
-
-    <div class="container-fluid">
-        <section class="row">
-            <div class="row justify-content-center">
-                <div class="col-12 col-xl-8 col-lg-8 col-md-6">
-                    <article class="description-content">
-
-                        <h1>Title</h1>
-                        <h5>Summary</h5>
-                        <hr class="my-4">
-                        <img class="landing"
-                            src=""
-                            class="float-left" alt="Main part of page goes here" style="width:100%">
-                        <div class="caption">
-                            <p class="capt"> Summary</p>
-                        </div>
-                        <p>
-                            HONEY BEE SUMMARY TEMP
-                        </p>
-                        <h5>Resources:</h5>
-                        <ol>
-                            <li> <a href=""></a>
-                            </li>
-                            <li><a href=""></a></li>
-                        </ol>
-                        <hr>
-                        <h10>UNCC Data Boot Camp 2020</h10>
-                    </article>
-                </div>
-                <div class="col-12 col-xl-2 col-lg-2 col-md-2 col-sm-6">
-                    <div class="image-navigation">
-                        <!-- Include Tab here imgs-->
-                        <h4>Visualizations</h4>
-                        <hr class="my-4">
-                        <div class="thumbnail">
-                            <a href="/viz1">
-                                <img src="" class="float-center" alt="Responsive image"
-                                    style="width: 100%">
-                                <div class="caption" class="align">
-                                    <p class="capt">Img1</p>
-                                </div>
-                        </div>
-                        <div class="thumbnail">
-                            <a href="/viz2">
-                                <img src="" class="float-center" alt="Responsive image"
-                                    style="width:100%">
-                                <div class="caption">
-                                    <p class="capt">Img2</p>
-                                </div>
-                        </div>
-                        <div class="thumbnail">
-                            <a href="viz3">
-                                <img src=""
-                                    class='justify-content-center' alt="Responsive image" style="width:100%">
-                                <div class="caption">
-                                    <p class="capt">Img3</p>
-                                </div>
-                        </div>
-                        <div class="thumbnail">
-                            <a href="viz4">
-                                <img src=""
-                                    class='justify-content-center' alt="seasonal_teaser" style="width:100%">
-                                <div class="caption">
-                                    <p class="capt">Img4</p>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
-
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -185,58 +114,3 @@
 </body>
 
 </html>
-
-
-<!-- <!doctype html>
-<html>
-<style>
-    form {
-        margin: auto;
-        width: 35%;
-    }
-
-    .result {
-        margin: auto;
-        width: 35%;
-        border: 1px solid #ccc;
-    }
-</style>
-
-<head>
-    <title>Bike Usage Model</title>
-</head>
-<form action="{{ url_for('main') }}" method="POST">
-    <fieldset>
-        <legend>Input values:</legend>
-        nCLOTHIANIDIN:
-        <input name="nCLOTHIANIDIN" type="number" required>
-        <br>
-        nIMIDACLOPRID:
-        <input name="nIMIDACLOPRID" type="number" required>
-        <br>
-        nTHIAMETHOXAM:
-        <input name="nTHIAMETHOXAM" type="number" required>
-        <br>
-        nACETAMIPRID:
-        <input name="nACETAMIPRID" type="number" required>
-        <br>
-        nTHIACLOPRID:
-        <input name="nTHIACLOPRID" type="number" required>
-        <br>
-        nAllNeonic:
-        <input name="nAllNeonic" type="number" required>
-        <br>
-        numcol:
-        <input name="numcol" type="number" required>
-        <br>
-        <input type="submit">
-    </fieldset>
-</form>
-<br>
-<div class="result" align="center">
-    <p> LRE Prediction: {{  prediction  }} </p>
-    <p>Scaled LRE Prediction {{  scaled_prediction  }}</p>
-    <p>Kaggle Prediction {{  kaggle_y  }}</p>
-
-</div> -->
-<!-- </html> -->

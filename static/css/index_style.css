@@ -12,6 +12,7 @@ html {
 body {
   /* Padding bottom by footer height */
   padding-bottom: 80px;
+  background-color: rgb(245, 238, 178);
 }
 
 #footer {
@@ -73,4 +74,30 @@ h10 {
   left: 50%; */
   /* transform: translate(-50%, -50%); */
 
+}
+
+@media (min-width: 434px){
+  .navbar.bg-light {
+  background-color: #ebc72b !important;
+}
+}
+
+@media (max-width: 768px){
+  .navbar.bg-light {
+  background-color:rgb(230, 225, 225) !important;
+}
+}
+
+.navbar-brand, .nav > li > a {
+  padding: 15px;
+  font-size: 25px;
+}
+
+.navbar-light .navbar-brand {
+  color: white;
+}
+
+.navbar a {
+  color:gray;
+  font-size: 18px;
 }
