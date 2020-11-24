@@ -9,8 +9,6 @@ import glob
 from joblib import load
 from fastai.vision.all import *
 from werkzeug.utils import secure_filename
-from datetime import datetime
-
 app = flask.Flask(__name__, template_folder='templates')
 
 # Config settings
