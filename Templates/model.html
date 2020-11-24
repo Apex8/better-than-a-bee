@@ -6,6 +6,7 @@
     <title>Honey Production Model</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link rel="stylesheet" href="../static/css/contact_style.css">
     <!-- Glyphicons Fontawesome link -->
     <script src="https://kit.fontawesome.com/f11d2abb65.js" crossorigin="anonymous"></script>
@@ -52,65 +53,196 @@
     </nav>
     <style>
         form {
-            margin: auto;
-            width: 35%;
+            margin: 35px;
+            /* width: 300px; */
+            width: 100%;
+            /* border: 1px solid #ccc;
+            padding: 5%; */
+
         }
 
         .result {
             margin: auto;
-            width: 35%;
+            width: 50%;
             border: 1px solid #ccc;
+            padding: 5%;
+            padding-top: px;
+        }
+
+        .input {
+            vertical-align: middle;
+            align-items: right;
+            /* border: 1px solid #ccc; */
+            /* padding: 15%; */
+            padding-top: 15%;
+            padding-left: 40%;
+
         }
     </style>
 
     <head>
-        <title>Bike Usage Model</title>
+        <title>Honey Production Prediction Models</title>
     </head>
-    <form action="{{ url_for('main') }}" method="POST">
-        <fieldset>
-            <legend>Input values:</legend>
-            nCLOTHIANIDIN:
-            <input name="nCLOTHIANIDIN" type="number" required>
-            <br>
-            nIMIDACLOPRID:
-            <input name="nIMIDACLOPRID" type="number" required>
-            <br>
-            nTHIAMETHOXAM:
-            <input name="nTHIAMETHOXAM" type="number" required>
-            <br>
-            nACETAMIPRID:
-            <input name="nACETAMIPRID" type="number" required>
-            <br>
-            nTHIACLOPRID:
-            <input name="nTHIACLOPRID" type="number" required>
-            <br>
-            nAllNeonic:
-            <input name="nAllNeonic" type="number" required>
-            <br>
-            numcol:
-            <input name="numcol" type="number" required>
-            <br>
-            <input type="submit">
-        </fieldset>
-    </form>
-    <br>
-    <div class="result" align="center">
-        <p> LRE Prediction: {{  prediction  }} </p>
-        <p>Scaled LRE Prediction {{  scaled_prediction  }}</p>
-        <p>Kaggle Prediction {{  kaggle_y  }}</p>
 
-    </div>
+    <body>
+        <!-- <div class="container"> -->
+        <!-- <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+                <form action="{{ url_for('main') }}" method="POST">
+                    <fieldset>
+                        <legend>Input values:</legend>
+                        <ul class="list-group" id="filters">
+                            <ul>
+                                nClothianidin:
+                                <input name="nCLOTHIANIDIN" type="number" required>
+                            </ul>
+                            <br>
+                            <ul>
+                                nImicadcloprid:
+                                <input name="nIMIDACLOPRID" type="number" required>
+                            </ul>
+                            <br>
+                            <ul>
+                                nThiamethoxam:
+                                <input name="nTHIAMETHOXAM" type="number" required>
+                            </ul>
+                            <br>
+                            <ul>
+                                nAcetamiprid:
+                                <input name="nACETAMIPRID" type="number" required>
+                            </ul>
+                            <br>
+                            <ul>
+                                nThiacloprid:
+                                <input name="nTHIACLOPRID" type="number" required>
+                            </ul>
+                            <br>
+                            <ul>
+                                nAllNeonic:
+                                <input name="nAllNeonic" type="number" required>
+                            </ul>
+                            <br>
+                            <ul>
+                                numcol:
+                                <input name="numcol" type="number" required>
+                            </ul>
+                            <br>
+                        </ul>
+                        <input type="submit">
+                    </fieldset>
+                </form>
+            </div>
+        </div> -->
 
-</body>
+
+
+        <br>
+
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+                    <form id="form" action="{{ url_for('main') }}" method="POST">
+                        <fieldset>
+                            <legend>Input Values:</legend>
+                            <br>
+                        <div class="row">
+                            <div class="col">
+                                <ul>
+                                    <label for="nClothianidin">nClothianidin</label>
+                                    <input class="form-control" name="nCLOTHIANIDIN" type="number" placeholder="1000"
+                                        required>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul>
+                                    <label for="nImicadcloprid">nImicadcloprid</label>
+                                    <input class="form-control" name="nIMIDACLOPRID" type="number" placeholder="1000"
+                                        required>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <ul>
+                                    <label for="nThiamethoxam">nThiamethoxam</label>
+                                    <input class="form-control" name="nTHIAMETHOXAM" type="number" placeholder="1000"
+                                        required>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul>
+                                    <label for="nAcetamiprid">nAcetamiprid</label>
+                                    <input class="form-control" name="nACETAMIPRID" type="number" placeholder="1000"
+                                        required>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <ul>
+                                    <label for="nThiacloprid">nThiacloprid</label>
+                                    <input class="form-control" name="nTHIACLOPRID" type="number" placeholder="1000"
+                                        required>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul>
+                                    <label for="nAllneonic">nAllneonic</label>
+                                    <input class="form-control" name="nAllNeonic" type="number" placeholder="1000"
+                                        required>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <ul>
+                                    <label for="numcol">numcol</label>
+                                    <input class="form-control" name="numcol" type="number" placeholder="1000" required>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <div class="input">
+                                    <input type="submit">
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </fieldset>
+
+                    </form>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="result" align="center">
+                    <p> <strong>LRE Prediction:</strong> {{  prediction  }} </p>
+                    <p> <strong>Scaled LRE Prediction:</strong> {{  scaled_prediction  }}</p>
+                    <p><strong>Kaggle Prediction:</strong> {{  kaggle_y  }}</p>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+
+        <br>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+    </body>
 
 </html>
