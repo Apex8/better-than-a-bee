@@ -52,10 +52,10 @@
     </nav>
 
 
-    <div class="container-fluid">
+    <div class="container">
         <section class="row">
             <div class="row justify-content-center">
-                <div class="col-12 col-xl-8 col-lg-8 col-md-6">
+                <div class="col-md-12">
                     <article class="description-content">
 
                         <div class='tableauPlaceholder' id='viz1605984138726' style='position: relative'><noscript><a
@@ -77,8 +77,14 @@
                                 <param name='display_count' value='yes' />
                                 <param name='language' value='en' />
                                 <param name='filter' value='publish=yes' /></object></div>
-                        <script
-                            type='text/javascript'>                    var divElement = document.getElementById('viz1605984138726'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.minWidth = '420px'; vizElement.style.maxWidth = '100%'; vizElement.style.minHeight = '610px'; vizElement.style.maxHeight = (divElement.offsetWidth * 0.75) + 'px'; } else if (divElement.offsetWidth > 500) { vizElement.style.minWidth = '420px'; vizElement.style.maxWidth = '100%'; vizElement.style.minHeight = '610px'; vizElement.style.maxHeight = (divElement.offsetWidth * 0.75) + 'px'; } else { vizElement.style.width = '100%'; vizElement.style.minHeight = '1500px'; vizElement.style.maxHeight = (divElement.offsetWidth * 1.77) + 'px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                        <script type='text/javascript'>
+                            var divElement = document.getElementById('viz1605984138726');
+                            var vizElement = divElement.getElementsByTagName('object')[0];
+                            { vizElement.style.width = '1200px'; vizElement.style.height = '800px'; }
+                            var scriptElement = document.createElement('script'); 
+                            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; 
+                            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                        </script>
                     </article>
                 </div>
             </div>
