@@ -99,3 +99,51 @@ body {
     color:gray;
     font-size: 18px;
   }
+
+  .thumbnail {
+    padding: 15px;
+    border-radius: 25px;
+  }
+
+  .img-fluid {
+    border-radius: 10px;
+  }
+
+  .paragraph {
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 55px;
+    font-weight: bold;
+    font-style: italic;
+    color: #000;
+    padding-top: 15px;
+    animation-name: initial;
+    animation-duration: 4s;
+  }
+
+  .viztitle {
+    padding-top: 20px;
+  }
+/* Title sign */
+  .crazytitle {
+    margin: 0;
+    padding-top: 15px;
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 1;
+    font-family: 'Teko', sans-serif;
+    font-size: 55px;
+    text-transform: uppercase;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 20px #2d9da9;
+    }
+    to {
+      text-shadow: 0 0 30px #34b3c1, 0 0 10px #4dbbc7;
+    }
+  }
+

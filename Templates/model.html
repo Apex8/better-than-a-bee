@@ -149,14 +149,14 @@
                         <div class="row">
                             <div class="col">
                                 <ul>
-                                    <label for="nClothianidin">nClothianidin</label>
-                                    <input class="form-control" name="nCLOTHIANIDIN" type="number" placeholder="1000"
+                                    <label for="nClothianidin">Clothianidin (kg)</label>
+                                    <input class="form-control" name="nCLOTHIANIDIN" type="number" placeholder="0-278498"
                                         required>
                                 </ul>
                             </div>
                             <div class="col">
                                 <ul>
-                                    <label for="nImicadcloprid">nImicadcloprid</label>
+                                    <label for="nImicadcloprid">Imicadcloprid (kg)</label>
                                     <input class="form-control" name="nIMIDACLOPRID" type="number" placeholder="1000"
                                         required>
                                 </ul>
@@ -165,14 +165,14 @@
                         <div class="row">
                             <div class="col">
                                 <ul>
-                                    <label for="nThiamethoxam">nThiamethoxam</label>
+                                    <label for="nThiamethoxam">Thiamethoxam (kg)</label>
                                     <input class="form-control" name="nTHIAMETHOXAM" type="number" placeholder="1000"
                                         required>
                                 </ul>
                             </div>
                             <div class="col">
                                 <ul>
-                                    <label for="nAcetamiprid">nAcetamiprid</label>
+                                    <label for="nAcetamiprid">Acetamiprid (kg)</label>
                                     <input class="form-control" name="nACETAMIPRID" type="number" placeholder="1000"
                                         required>
                                 </ul>
@@ -182,14 +182,14 @@
                         <div class="row">
                             <div class="col">
                                 <ul>
-                                    <label for="nThiacloprid">nThiacloprid</label>
+                                    <label for="nThiacloprid">Thiacloprid (kg)</label>
                                     <input class="form-control" name="nTHIACLOPRID" type="number" placeholder="1000"
                                         required>
                                 </ul>
                             </div>
                             <div class="col">
                                 <ul>
-                                    <label for="nAllneonic">nAllneonic</label>
+                                    <label for="nAllneonic">All Neonicotinoids (kg)</label>
                                     <input class="form-control" name="nAllNeonic" type="number" placeholder="1000"
                                         required>
                                 </ul>
@@ -198,10 +198,20 @@
                         <div class="row">
                             <div class="col">
                                 <ul>
-                                    <label for="numcol">numcol</label>
+                                    <label for="numcol">Number of Colonies</label>
                                     <input class="form-control" name="numcol" type="number" placeholder="1000" required>
                                 </ul>
                             </div>
+                            <div class="col">
+                                <ul>
+                                    <label for="totalprod">Total Production (lbs)</label>
+                                    <input class="form-control" name="totalprod" type="number" placeholder="1000" required>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="row">
+
                             <div class="col">
                                 <div class="input">
                                     <input type="submit">
@@ -222,9 +232,15 @@
                 <br>
                 <br>
                 <div class="result" align="center">
-                    <p> <strong>LRE Prediction:</strong> {{  prediction  }} </p>
-                    <p> <strong>Scaled LRE Prediction:</strong> {{  scaled_prediction  }}</p>
-                    <p><strong>Kaggle Prediction:</strong> {{  kaggle_y  }}</p>
+                    <p> <strong>HPLR Prediction:</strong> {{  HPLR_y  }} </p>
+                    <p> <strong>HPE Prediction:</strong> {{  HPE_y  }}</p>
+                    <p><strong>HPL Prediction:</strong> {{  HPL_y }}</p>
+                    <p><strong>HPR Prediction:</strong> {{  HPR_y }}</p>
+                    <p><strong>PVLR Prediction:</strong> {{  PVLR_y }}</p>
+                    <p><strong>PVL Prediction:</strong> {{  PVL_y }}</p>
+                    <p><strong>PVE Prediction:</strong> {{  PVE_y }}</p>
+                    <p><strong>PVR Prediction:</strong> {{  PVR_y }}</p>
+
                 </div>
             </div>
         </div>

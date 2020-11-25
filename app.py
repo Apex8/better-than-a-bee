@@ -9,8 +9,6 @@ import glob
 from joblib import load
 from fastai.vision.all import *
 from werkzeug.utils import secure_filename
-from datetime import datetime
-
 app = flask.Flask(__name__, template_folder='templates')
 
 # Config settings
@@ -75,10 +73,23 @@ def viz6():
 @app.route('/model', methods=['GET', 'POST'])
 def main():
     if flask.request.method == 'POST':
-        LRE_model = joblib.load('model/kaggle_LRE_Model.sav')
-        kaggle_model = joblib.load('model/kaggle_model.sav')
+        PV_Elastic = joblib.load('updated_ML/kaggle_LRE_Elastic_2.sav')
+        PV_Lasso = joblib.load('updated_ML/kaggle_LRE_Lassso_2.sav')
+        PV_LRModel = joblib.load('updated_ML/kaggle_LRE_Model_2.sav')
+        PV_Ridge = joblib.load('updated_ML/kaggle_LRE_Ridge_2.sav')
+        HP_Elastic = joblib.load('updated_ML/kaggle_LRE_Elastic.sav')
+        HP_Lasso = joblib.load('updated_ML/kaggle_LRE_Lassso.sav')
+        HP_LRModel = joblib.load('updated_ML/kaggle_LRE_Linear.sav')
+        HP_Ridge = joblib.load('updated_ML/kaggle_LRE_Ridge.sav')
+        # kaggle_model = joblib.load('model/kaggle_model.sav')
         # brain_model is saved from 
-        X_scaler = joblib.load('model/X_scaler.sav')
+        HPX_scaler = joblib.load('updated_ML/X_scaler1.sav')
+        HPy_scaler = joblib.load('updated_ML/y_scaler1.sav')
+        PVX_scaler = joblib.load('updated_ML/X_scaler2.sav')
+        PVy_scaler = joblib.load('updated_ML/y_scaler2.sav')
+
+
+        # X_scaler = joblib.load('model/X_scaler.sav')
         # y_scaler = joblib.load('y_scaler.sav')
         nCLOTHIANIDIN = flask.request.form['nCLOTHIANIDIN']
         nIMIDACLOPRID = flask.request.form['nIMIDACLOPRID']
@@ -87,23 +98,48 @@ def main():
         nTHIACLOPRID = flask.request.form['nTHIACLOPRID']
         nAllNeonic = flask.request.form['nAllNeonic']
         numcol = flask.request.form['numcol']
+        totalprod = flask.request.form['totalprod']
+
         # img = flask.request.form['img']
-        X = pd.DataFrame({'nCLOTHIANIDIN': [nCLOTHIANIDIN], 
+        X_PV = pd.DataFrame({'nCLOTHIANIDIN': [nCLOTHIANIDIN], 
+                        'nIMIDACLOPRID': [nIMIDACLOPRID],
+                        'nTHIAMETHOXAM': [nTHIAMETHOXAM],
+                        'nACETAMIPRID': [nACETAMIPRID],
+                        'nTHIACLOPRID': [nTHIACLOPRID],
+                        'nAllNeonic': [nAllNeonic],
+                        'numcol': [numcol],
+                        'totalprod': [totalprod]})
+
+        X_HP = pd.DataFrame({'nCLOTHIANIDIN': [nCLOTHIANIDIN], 
                         'nIMIDACLOPRID': [nIMIDACLOPRID],
                         'nTHIAMETHOXAM': [nTHIAMETHOXAM],
                         'nACETAMIPRID': [nACETAMIPRID],
                         'nTHIACLOPRID': [nTHIACLOPRID],
                         'nAllNeonic': [nAllNeonic],
                         'numcol': [numcol]})
-        print(X)
-        X_scaled = X_scaler.transform(X)
-        print(X_scaled)
+        # print(X_PV)
+        print("----------")
+        print(X_HP)
 
-        scaled_y = LRE_model.predict(X_scaled)[0][0]
-        y = LRE_model.predict(X)[0][0]
-        kaggle_y = kaggle_model.predict(X)[0][0]
+        PVX_scaled = PVX_scaler.transform(X_PV)
+        # print(PVX_scaled)
+        HPX_scaled = HPX_scaler.transform(X_HP)
 
-        return(flask.render_template('model.html', prediction=y, scaled_prediction=scaled_y, kaggle_y=kaggle_y))
+        HPLR_y = int(HPy_scaler.inverse_transform(HP_LRModel.predict(HPX_scaled))[0][0])
+        HPE_y = int(HPy_scaler.inverse_transform(HP_Elastic.predict(HPX_scaled))[0])
+        HPL_y = int(HPy_scaler.inverse_transform(HP_Lasso.predict(HPX_scaled))[0])
+        HPR_y = int(HPy_scaler.inverse_transform(HP_Ridge.predict(HPX_scaled))[0][0])
+        PVLR_y = int(PVy_scaler.inverse_transform(PV_LRModel.predict(PVX_scaled))[0][0])
+        PVE_y = int(PVy_scaler.inverse_transform(PV_Elastic.predict(PVX_scaled))[0])
+        PVL_y = int(PVy_scaler.inverse_transform(PV_Lasso.predict(PVX_scaled))[0])
+        PVR_y = int(PVy_scaler.inverse_transform(PV_Ridge.predict(PVX_scaled))[0][0])
+
+        # scaled_y = LRE_model.predict(X_scaled)[0][0]
+        # y = LRE_model.predict(X)[0][0]
+        # kaggle_y = kaggle_model.predict(X)[0][0]
+        # 
+
+        return(flask.render_template('model.html', HPLR_y=HPLR_y, HPE_y=HPE_y, HPL_y=HPL_y, HPR_y=HPR_y, PVLR_y=PVLR_y, PVE_y=PVE_y, PVL_y=PVL_y, PVR_y=PVR_y))
     if flask.request.method == 'GET':
         return(flask.render_template('model.html'))
 
