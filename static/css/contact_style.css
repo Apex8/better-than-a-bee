@@ -12,6 +12,18 @@ html {
     margin-bottom: 16px;
     padding: 0 10px;
   }
+
+  .column2 {
+    float: center;
+    width: 50%;
+    
+  }
+
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
   
   @media screen and (max-width: 650px) {
     .column {
@@ -34,6 +46,17 @@ html {
     display: table;
   }
   
+  .container2 {
+    background-color: white;
+    
+  }
+
+  .container2::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
   .title {
     color: grey;
   }
@@ -68,7 +91,7 @@ html {
     color: black;
     font-weight: bold;
     text-align: center;
-}
+  }
 
 body {
     background-color: rgb(245, 238, 178);
@@ -147,3 +170,31 @@ body {
     }
   }
 
+  td, th {
+    text-align: center;
+    height: 40px;
+    width: 150px;
+  }
+
+  th {
+    background-color: #cc890e;
+    color: white;
+  }
+
+  .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  table {
+    margin: 4em;
+    float: left;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+p {
+  font-size: 18px;
+  font-family: -apple-system,BlinkMacSystemFont;
+}
