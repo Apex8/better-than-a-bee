@@ -57,15 +57,130 @@
             <div class="row justify-content-center">
                 <article class="description-content">
 
+<br>
+<br>
+                    <h3>Documentation</h3>
+                    <p>We obtained a dataset of 'Honeybees and Neonicotinoid Pesticides' from Kaggle.com for our machine learning project.
+                        Original dataset contained 761 rows and 16 columns with state name, year, honeybee colony number, honey production data, and the usage of neonicotinoid pesticides etc.
+                        
+                    </p>
+                    <p> We made two machine learning models to predict the total honey production (unit is lb) and the production value (unit is $).
+                        For the honey production model, we used honeybee colony number and all six neonicotinoid variables from the original dataset as x variables. 
+                        For the production value model, we used honeybee colony number, total honey production, and all six neonicotinoid variables from the original dataset as x variables.
+                        X and y variables were preprocessed with standard scaler.
+                        We used sklearn.linear_model with Linear Regression, Lasso, Ridge, and ElasticNet Models for the machine learning process, and compared the MSE and r2 values.
+                        Because we obtained similar MSE and r2 values from the models, we decided to use all models to predict the y variables.
+                    </p>
+                    <br>
+        <div class="container2">        
+            <div class="row">
+                <div class="column2">
+                    <div class="container2">
+                    
+                    <br>
+                    <img src="../static/img/HP_Graph.png" alt="HP_Graph" style="width:100%">
+                    </div> 
+                </div> 
+                <div class="column2">
+                    <div class="container2">
+                        
+                        <br>
+                    <img src="../static/img/PV_Graph.png" alt="PV_Graph" style="width:100%">
+                    </div> 
+                </div> 
+    <br>
+    <div class="container2"> 
+        <div class="wrap">
+        <font size="4" face="-apple-system,BlinkMacSystemFont" >
+        <table border="5" style="display: inline-block;" style="margin-right:10%;" >
+            <thead>
+              <tr>
+                <th colspan="3">Table1: MSE and r2 Values from Honey Production</th>
+              </tr>
+              <tr>
+                <th>Models</th>
+                <th>MSE</th>
+                <th>r2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Linear Regression</td>
+                <td>0.006</td>
+                <td>0.910</td>
+                
+              </tr>
+              <tr>
+                <td>Lasso</td>
+                <td>0.058</td>
+                <td>0.916</td>
+              </tr>
+              <tr>
+                <td>Ridge</td>
+                <td>0.062</td>
+                <td>0.910</td>
+              </tr>
+              <tr>
+                <td>ElasticNet</td>
+                <td>0.059</td>
+                <td>0.915</td>
+              </tr>
+            </tbody>
+          </table>
+         </font>
+         <font size="4" face="-apple-system,BlinkMacSystemFont" >
+          <table border="5" style="display: inline-block;" style="margin-right:10%;">
+            <thead>
+              <tr>
+                <th colspan="3">Table 2: MSE and r2 Values from Production Value</th>
+              </tr>
+              <tr>
+                <th>Models</th>
+                <th>MSE</th>
+                <th>r2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Linear Regression</td>
+                <td>0.213</td>
+                <td>0.756</td>
+                
+              </tr>
+              <tr>
+                <td>Lasso</td>
+                <td>0.204</td>
+                <td>0.766</td>
+              </tr>
+              <tr>
+                <td>Ridge</td>
+                <td>0.213</td>
+                <td>0.756</td>
+              </tr>
+              <tr>
+                <td>ElasticNet</td>
+                <td>0.201</td>
+                <td>0.770</td>
+              </tr>
+              
+            </tbody>
+            
+          </table>
+        </font>
+    </div>
 
-                    <h3>Documentation/Resources</h3>
+        </div> 
+    </div>
+</div>
+<br>
+                    <h3>References</h3>
 
                     <p>
                         Resources used for analysis, both using Kaggle and data.world sets ranging in years before the start of CCD, with the first reported case being in 2006, and going up to 2019 with some data sets.
                         The image recognition data set was separated into the 4 different categories for classification (Bee, Wasp, insect, or other), and the model was created using these metrics to allow for image upload by the end user to be categorized into the 4 groups.
                         
                     </p>
-                    <h5>Resources:</h5>
+                    <h5>References:</h5>
                     <ol>
                         <li><a href="https://www.kaggle.com/jessicali9530/honey-production"> Honey Production in the USA (1998-2012):
                             Honey Production Figures and Prices by National Agricultural Statistics Service </a></li>
@@ -88,7 +203,6 @@
                         <ul style="padding-bottom:10px">
                             <li>Bee Colony Survey Data by State data was retrieved from the United States Department of Agriculture National Agricultural Statistics Service Quick Stats Dataset.</li>
                             <li>Bee Colony Loss file from the @makeovermonday dataset 2018w18-bee-colony-loss. </li>
-                            <li></li>
                          </ul>
                         <li><a href="https://www.kaggle.com/jerzydziewierz/bee-vs-wasp"> Bee or wasp?:
                             19480 Hand curated photos of bees, wasps and other insects. </a></li>
