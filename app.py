@@ -7,7 +7,7 @@ import pandas as pd
 import os
 import glob
 from joblib import load
-from fastai.vision.all import *
+# from fastai.vision.all import *
 from werkzeug.utils import secure_filename
 app = flask.Flask(__name__, template_folder='templates')
 
