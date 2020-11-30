@@ -143,67 +143,67 @@ def main():
     if flask.request.method == 'GET':
         return(flask.render_template('model.html'))
 
-@app.route('/imgrecognition', methods=['GET', 'POST'])
+# @app.route('/imgrecognition', methods=['GET', 'POST'])
 
-def img_predict():
+# def img_predict():
 
-    # Run on Submit button click
-    if flask.request.method == 'POST':
+#     # Run on Submit button click
+#     if flask.request.method == 'POST':
 
-        # This works, but is clumsy - can't figure out a better way to do it
-        # Without this the file caches and doesn't update on reload
-        # Identify the file to be deleted
-        del_file = glob.glob(app.config["IMAGE_UPLOADS"] + '/UPLOAD_PIC*')
-        # Convert to a string and remove the root
-        file_to_delete = str(del_file)[14:-2]
+#         # This works, but is clumsy - can't figure out a better way to do it
+#         # Without this the file caches and doesn't update on reload
+#         # Identify the file to be deleted
+#         del_file = glob.glob(app.config["IMAGE_UPLOADS"] + '/UPLOAD_PIC*')
+#         # Convert to a string and remove the root
+#         file_to_delete = str(del_file)[14:-2]
 
-        try:
-            # Delete the previously uploaded file
-            os.remove(app.config["IMAGE_UPLOADS"] + '/' + file_to_delete)
+#         try:
+#             # Delete the previously uploaded file
+#             os.remove(app.config["IMAGE_UPLOADS"] + '/' + file_to_delete)
         
-        except:
-            print('')
+#         except:
+#             print('')
 
-        # Get the file name
-        image = flask.request.files['image']
+#         # Get the file name
+#         image = flask.request.files['image']
 
-        # Get the image file size
-        image.seek(0, os.SEEK_END)
-        size = image.tell()
+#         # Get the image file size
+#         image.seek(0, os.SEEK_END)
+#         size = image.tell()
         
-        # If file size > size limit in config settings then do not accept the image
-        if size > app.config["MAX_IMAGE_FILESIZE"]:
-            return(flask.render_template('imgrecognition.html', prediction="Maximum file size exceeded."))
+#         # If file size > size limit in config settings then do not accept the image
+#         if size > app.config["MAX_IMAGE_FILESIZE"]:
+#             return(flask.render_template('imgrecognition.html', prediction="Maximum file size exceeded."))
         
-        if allowed_image(image.filename):
+#         if allowed_image(image.filename):
 
-            now = datetime.now()
-            substr_now = str(now)[-6:]
+#             now = datetime.now()
+#             substr_now = str(now)[-6:]
 
-            # Use a constant filename, but with a variable extension - this facilitates deletion later
-            filename = 'UPLOAD_PIC' + substr_now + '.' + ext
+#             # Use a constant filename, but with a variable extension - this facilitates deletion later
+#             filename = 'UPLOAD_PIC' + substr_now + '.' + ext
             
-            # fastai creates an image object - not really sure why this is necessary
-            img = PILImage.create(image)
+#             # fastai creates an image object - not really sure why this is necessary
+#             img = PILImage.create(image)
 
-            # Save the image
-            img.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
+#             # Save the image
+#             img.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
     
-            # Load the model
-            learn = load_learner('model/export.pkl')
+#             # Load the model
+#             learn = load_learner('model/export.pkl')
                     
-            # Run the image through the model
-            pred_class, pred_idx, outputs = learn.predict(img)
+#             # Run the image through the model
+#             pred_class, pred_idx, outputs = learn.predict(img)
 
-            # Return the prediction on the webpage and display the image
-            return(flask.render_template('imgrecognition.html', prediction=f'Prediction class: {pred_class}', selected_image=app.config["IMAGE_UPLOADS"] + '/' + filename))
+#             # Return the prediction on the webpage and display the image
+#             return(flask.render_template('imgrecognition.html', prediction=f'Prediction class: {pred_class}', selected_image=app.config["IMAGE_UPLOADS"] + '/' + filename))
             
-        else:
-            return(flask.render_template('imgrecognition.html', prediction="Please select a valid file type."))
+#         else:
+#             return(flask.render_template('imgrecognition.html', prediction="Please select a valid file type."))
     
-    if flask.request.method == 'GET':
+#     if flask.request.method == 'GET':
         
-        return(flask.render_template('imgrecognition.html'))
+#         return(flask.render_template('imgrecognition.html'))
 
 if __name__ == '__main__':
     app.run()
