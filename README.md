@@ -33,4 +33,8 @@ File Selection and Prediction Example with a Ladybeetle Image File.
 ![prediction_page](Read_Me_Image/machine-learning-image.png)
 
 
-We created a main webpage, image recognition page, regression machine learning page, documentation & references, visualizations, and contact pages. Our website was deployed with Heroku. Enjoy our website!
+We created a main webpage, image recognition page, regression machine learning page, documentation & references, visualizations, and contact pages. Our website was deployed with Heroku. 
+
+https://bee-model.herokuapp.com/
+
+Enjoy our website!
