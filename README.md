@@ -28,8 +28,9 @@ The team has created two machine learning tasks to assist in studying CCD! First
 Second, we have an image recognition model that can take in a user uploaded image and separate it into four categories (Bee, Wasp, Insect, or other). The initial upload of the model has it at an almost 95% accuracy rate! Keep in mind however the model is only able to identify things close to the initial uploaded images for the model therefore it might classify some images incorrectly in the insect or other categories.
 
 
-### Image Recognition Website - file selection and prediction
+### Image Recognition Webpage
+File Selection and Prediction Example with a Ladybeetle Image File.
 ![prediction_page](Read_Me_Image/machine-learning-image.png)
 
 
-We created main webpage, image recognition page, regression machine learning page, documentation & references, visualizations, and contact pages. Our website was deployed with Heroku. Enjoy our website!
+We created a main webpage, image recognition page, regression machine learning page, documentation & references, visualizations, and contact pages. Our website was deployed with Heroku. Enjoy our website!
