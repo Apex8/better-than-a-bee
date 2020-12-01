@@ -16,11 +16,11 @@
 * The team has created two machine learning tasks to assist in studying CCD! First, we have a model that will take in different metrics of pesticide usage to predict if their continued implementation would hinder honey production or honey production value in a significant way. For honey production model, we used honeybee colony number and all neonicotinoid data as x variables. For the production value model, we used honeybee colony number, total honey production, and all neonicotinoid data as x variables. X and y variables were preprocessed with a standard scaler. We used sklearn.liner_model with linear regression, Lasso, Ridge, and ElasticNet models for the machine learning process, and compared the MSE and r2 values. Because we obtained similar MSE and pretty high r2 values from all models, we decided to use all models to predict the y variables. We saved x and y scalers' and all machine learning models, and used those files to create a data prediction website with flask app.
 
 
- * #### Honey Prediction Webpage - Data Input Example
+ - #### Honey Prediction Webpage - Data Input Example
  ![prediction_page](Read_Me_Image/input-data.png)
 
 
- * #### Predicted Values through Machine Learning Models
+ - #### Predicted Values through Machine Learning Models
  ![prediction_page](Read_Me_Image/linear-ML-prediction.png)
 
 
@@ -28,8 +28,8 @@
 * Second, we have an image recognition model that can take in a user uploaded image and separate it into four categories (Bee, Wasp, Insect, or other). The initial upload of the model has it at an almost 95% accuracy rate! Keep in mind however the model is only able to identify things close to the initial uploaded images for the model therefore it might classify some images incorrectly in the insect or other categories.
 
 
-  * #### Image Recognition Webpage
- File Selection and Prediction Example with a Ladybeetle Image File.
+ - #### Image Recognition Webpage
+ - File Selection and Prediction Example with a Ladybeetle Image File.
  ![prediction_page](Read_Me_Image/machine-learning-image.png)
 
 
